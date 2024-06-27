@@ -17,8 +17,4 @@ class PromoRepoImp @Inject constructor(
         }.mapLeft { it.toNetworkError()
         }
     }
-
-    override suspend fun getDetail(promo: Promo) {
-
-    }
 }

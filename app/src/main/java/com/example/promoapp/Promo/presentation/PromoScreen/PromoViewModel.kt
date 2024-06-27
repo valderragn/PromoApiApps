@@ -1,7 +1,5 @@
 package com.example.promoapp.Promo.presentation.PromoScreen
 
-import android.content.Intent
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.promoapp.Promo.domain.model.Promo
 import com.example.promoapp.Promo.domain.repository.PromoRepo
 import com.example.promoapp.Promo.presentation.util.sendEvent
-import com.example.promoapp.detailActivity
 import com.example.promoapp.util.Event
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -58,8 +55,6 @@ class PromoViewModel @Inject constructor(
 
     fun onPromoCardClicked(promo: Promo) {
         _navigateToDetailActivity.value = promo
-
-
     }
 
 }

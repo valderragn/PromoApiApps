@@ -3,7 +3,6 @@ package com.example.promoapp.Promo.presentation.PromoScreen.component
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -14,22 +13,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.promoapp.Promo.domain.model.Promo
-import com.example.promoapp.Promo.domain.model.attributes
-import com.example.promoapp.ui.theme.PromoAppTheme
+import com.example.promoapp.Promo.presentation.PromoScreen.PromoViewModel
 
 
 @Composable
 fun PromoCard(
-    modifier: Modifier,
     promo: Promo,
-    onClick: () -> Unit
+    viewModel: PromoViewModel
 ){
     Card(
-        onClick = { onClick },
+        onClick = { viewModel.onPromoCardClicked(promo) },
         modifier = Modifier,
         shape = RoundedCornerShape(10.dp),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
@@ -68,34 +64,4 @@ fun PromoCard(
             }
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    val samplePromo = Promo(
-        id = 1,
-        attributes = attributes(
-            title = "Summer Sale",
-            count = 100,
-            alt = 50,
-            desc = "Get discounts on selected items!",
-            desc_promo = "Limited time offer",
-            latitude = "40.7128",
-            longitude = "-74.0060",
-            lokasi = "New York",
-            nama = "My Promo Store",
-            name_promo = "Summer2023",
-            createdAt = "2023-06-01",
-            updatedAt = "2023-06-15"
-        )
-    )
-
-
-//    PromoAppTheme {
-//        PromoCard(
-//            modifier = Modifier.fillMaxSize(),
-//            promo = samplePromo,
-//            onClick = {onPromoCardClicked(them)})
-//    }
 }

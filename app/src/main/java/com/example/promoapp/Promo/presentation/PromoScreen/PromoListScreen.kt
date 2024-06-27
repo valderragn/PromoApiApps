@@ -22,13 +22,13 @@ internal fun PromoListScreen(
     viewModel: PromoViewModel = hiltViewModel()
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
-    promoContent(state = state, viewModel)
+    PromoContent(state = state, viewModel)
 
 }
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun promoContent(
+fun PromoContent(
     state: PromoViewState,
     viewModel: PromoViewModel
 ){
@@ -44,7 +44,7 @@ fun promoContent(
             .padding(horizontal = 20.dp, vertical = 100.dp)
             ) {
             items(state.promos) { them ->
-                PromoCard(modifier = Modifier.fillMaxWidth(), them, onClick = {viewModel.onPromoCardClicked(them)})
+                PromoCard(them, viewModel)
             }
         }
     }

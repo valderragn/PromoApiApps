@@ -8,5 +8,4 @@ interface PromoRepo {
 
     suspend fun getPromo(): Either<NetworkError, List<Promo>>
 
-    suspend fun getDetail(promo: Promo)
 }
