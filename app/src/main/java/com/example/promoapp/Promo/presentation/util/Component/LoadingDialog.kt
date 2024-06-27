@@ -20,7 +20,7 @@ import androidx.compose.ui.window.DialogProperties
 fun LoadingDialog(isLoading: Boolean){
     if(isLoading){
         Dialog(
-            onDismissRequest = { /*TODO*/ },
+            onDismissRequest = {},
             properties = DialogProperties(dismissOnClickOutside = false)
         ) {
             Box(

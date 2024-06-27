@@ -19,6 +19,6 @@ class PromoRepoImp @Inject constructor(
     }
 
     override suspend fun getDetail(promo: Promo) {
-        TODO("Not yet implemented")
+
     }
 }
